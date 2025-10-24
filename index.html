@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetPredict Pro - Expert Betting Predictions & Analysis</title>
+    <meta name="description" content="Get expert betting predictions, odds analysis, and winning tips for football, basketball, tennis, and more. Join thousands of successful bettors.">
+    <meta name="keywords" content="betting predictions, sports betting, odds analysis, football predictions, basketball tips, tennis betting">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="BetPredict Pro - Expert Betting Predictions">
+    <meta property="og:description" content="Professional betting predictions and analysis for all major sports. Maximize your winning potential with our expert insights.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./Uploads/0c1b5726-5f30-41a8-9a02-ac9c285b1333.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./Uploads/0c1b5726-5f30-41a8-9a02-ac9c285b1333.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            min-height: 100vh;
+            padding: 4rem 0;
+        }
+
+        /* Prediction Cards */
+        .predictions-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .predictions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .prediction-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .prediction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .sport-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .match-time {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+
+        .team {
+            text-align: center;
+            flex: 1;
+        }
+
+        .team-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            margin: 0 auto 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .team-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .vs {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.2rem;
+            margin: 0 1rem;
+        }
+
+        .prediction-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .prediction-type {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .odds {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+        }
+
+        .odd-item {
+            text-align: center;
+        }
+
+        .odd-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.2rem;
+        }
+
+        .odd-value {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        .confidence {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .confidence-bar {
+            flex: 1;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .confidence-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .prediction-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-follow {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-follow:hover {
+            background: #5a6fd8;
+        }
+
+        .btn-details {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-details:hover {
+            background: #e0e0e0;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4rem 0;
+            margin: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            margin: 4rem 0;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .tip-icon {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .tip-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .tip-content {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .predictions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .teams {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .vs {
+                margin: 0;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <i class="fas fa-chart-line"></i> BetPredict Pro
+            </a>
+            <ul class="nav-links">
+                <li><a href="#predictions">Predictions</a></li>
+                <li><a href="#tips">Tips</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <button class="cta-button" onclick="openModal('subscribeModal')">
+                <i class="fas fa-crown"></i> Premium
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Expert Betting Predictions</h1>
+            <p>Get professional analysis, accurate predictions, and winning strategies for all major sports</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('predictions')">
+                    <i class="fas fa-play"></i> View Predictions
+                </button>
+                <button class="btn-secondary" onclick="openModal('subscribeModal')">
+                    <i class="fas fa-star"></i> Get Premium
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Predictions Section -->
+        <section id="predictions" class="predictions-section">
+            <div class="container">
+                <h2 class="section-title">Today's Top Predictions</h2>
+                <div class="predictions-grid" id="predictionsGrid">
+                    <!-- Predictions will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalPredictions">1,247</div>
+                        <div class="stat-label">Predictions Made</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="winRate">87%</div>
+                        <div class="stat-label">Win Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="activeUsers">15,432</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalWinnings">$2.4M</div>
+                        <div class="stat-label">Total Winnings</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section id="tips" class="tips-section">
+            <div class="container">
+                <h2 class="section-title">Betting Tips & Strategies</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="tip-title">Smart Bankroll Management</h3>
+                        <p class="tip-content">Never bet more than 5% of your bankroll on a single prediction. This strategy helps you stay in the game longer and reduces the risk of significant losses.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 class="tip-title">Value Betting</h3>
+                        <p class="tip-content">Look for odds that are higher than the true probability of an event occurring. This is the key to long-term profitability in sports betting.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="tip-title">Research is Key</h3>
+                        <p class="tip-content">Always research team form, head-to-head records, injuries, and other factors before placing your bets. Knowledge is power in betting.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="tip-title">Timing Matters</h3>
+                        <p class="tip-content">Place your bets at the right time. Odds can change significantly as more information becomes available closer to the event.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="tip-title">Emotion Control</h3>
+                        <p class="tip-content">Never bet based on emotions or team loyalty. Make decisions based on data, analysis, and probability, not feelings.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="tip-title">Keep Records</h3>
+                        <p class="tip-content">Track all your bets, wins, and losses. This helps you identify patterns and improve your betting strategy over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BetPredict Pro</h3>
+                    <p>Your trusted source for professional betting predictions and analysis. We combine advanced algorithms with expert knowledge to deliver accurate predictions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#predictions">Today's Predictions</a></p>
+                    <p><a href="#tips">Betting Tips</a></p>
+                    <p><a href="#stats">Statistics</a></p>
+                    <p><a href="#about">About Us</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Sports Covered</h3>
+                    <p>Football</p>
+                    <p>Basketball</p>
+                    <p>Tennis</p>
+                    <p>Baseball</p>
+                    <p>Hockey</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@betpredictpro.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BetPredict Pro. All rights reserved. | Please gamble responsibly.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Subscribe Modal -->
+    <div id="subscribeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('subscribeModal')">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #333;">
+                <i class="fas fa-crown" style="color: #ffd700;"></i> Premium Subscription
+            </h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="color: #667eea; margin-bottom: 1rem;">Unlock Premium Features</h3>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                    <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #6bcf7f;"></i> Exclusive high-confidence predictions</li>
+                    <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #6bcf7f;"></i> Advanced analytics and insights</li>
+                    <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #6bcf7f;"></i> Live betting tips and updates</li>
+                    <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #6bcf7f;"></i> Personal betting coach</li>
+                    <li style="margin: 0.5rem 0;"><i class="fas fa-check" style="color: #6bcf7f;"></i> Priority customer support</li>
+                </ul>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn-primary" style="font-size: 1.2rem; padding: 1rem 2rem;">
+                    Subscribe Now - $29.99/month
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample prediction data
+        const predictionsData = [
+            {
+                id: 1,
+                sport: 'Football',
+                time: 'Today 15:30',
+                team1: 'Manchester United',
+                team2: 'Liverpool',
+                prediction: 'Over 2.5 Goals',
+                odds: {
+                    home: 2.10,
+                    draw: 3.40,
+                    away: 3.20
+                },
+                confidence: 85,
+                analysis: 'Both teams have strong attacking records this season. Recent head-to-head meetings have averaged 3.2 goals per game.'
+            },
+            {
+                id: 2,
+                sport: 'Basketball',
+                time: 'Today 20:00',
+                team1: 'Lakers',
+                team2: 'Warriors',
+                prediction: 'Lakers Win',
+                odds: {
+                    home: 1.85,
+                    away: 1.95
+                },
+                confidence: 78,
+                analysis: 'Lakers have won 4 of their last 5 home games. Warriors are struggling with injuries to key players.'
+            },
+            {
+                id: 3,
+                sport: 'Tennis',
+                time: 'Tomorrow 14:00',
+                team1: 'Djokovic',
+                team2: 'Nadal',
+                prediction: 'Djokovic Win',
+                odds: {
+                    home: 1.65,
+                    away: 2.25
+                },
+                confidence: 82,
+                analysis: 'Djokovic has won 3 of their last 4 meetings on hard court. His recent form has been exceptional.'
+            },
+            {
+                id: 4,
+                sport: 'Football',
+                time: 'Tomorrow 18:45',
+                team1: 'Barcelona',
+                team2: 'Real Madrid',
+                prediction: 'Both Teams to Score',
+                odds: {
+                    home: 1.90,
+                    draw: 3.50,
+                    away: 4.20
+                },
+                confidence: 88,
+                analysis: 'El Clasico typically produces goals. Both teams have scored in 8 of their last 10 meetings.'
+            },
+            {
+                id: 5,
+                sport: 'Basketball',
+                time: 'Tomorrow 21:30',
+                team1: 'Celtics',
+                team2: 'Heat',
+                prediction: 'Over 220.5 Points',
+                odds: {
+                    home: 1.80,
+                    away: 2.00
+                },
+                confidence: 75,
+                analysis: 'Both teams are averaging over 110 points per game this season. High-scoring matchup expected.'
+            },
+            {
+                id: 6,
+                sport: 'Football',
+                time: 'Sunday 16:00',
+                team1: 'Arsenal',
+                team2: 'Chelsea',
+                prediction: 'Arsenal Win',
+                odds: {
+                    home: 2.30,
+                    draw: 3.20,
+                    away: 3.10
+                },
+                confidence: 80,
+                analysis: 'Arsenal has been in excellent form at home this season. Chelsea has struggled in away games recently.'
+            }
+        ];
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPredictions();
+            animateStats();
+            setupEventListeners();
+        });
+
+        // Load predictions into the grid
+        function loadPredictions() {
+            const grid = document.getElementById('predictionsGrid');
+            grid.innerHTML = '';
+
+            predictionsData.forEach(prediction => {
+                const card = createPredictionCard(prediction);
+                grid.appendChild(card);
+            });
+        }
+
+        // Create a prediction card
+        function createPredictionCard(prediction) {
+            const card = document.createElement('div');
+            card.className = 'prediction-card';
+            
+            const isFootball = prediction.sport === 'Football';
+            const hasDraw = isFootball;
+            
+            card.innerHTML = `
+                <div class="match-header">
+                    <span class="sport-badge">${prediction.sport}</span>
+                    <span class="match-time">${prediction.time}</span>
+                </div>
+                
+                <div class="teams">
+                    <div class="team">
+                        <div class="team-logo">
+                            <i class="fas fa-${isFootball ? 'futbol' : prediction.sport === 'Basketball' ? 'basketball-ball' : 'table-tennis'}"></i>
+                        </div>
+                        <div class="team-name">${prediction.team1}</div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="team">
+                        <div class="team-logo">
+                            <i class="fas fa-${isFootball ? 'futbol' : prediction.sport === 'Basketball' ? 'basketball-ball' : 'table-tennis'}"></i>
+                        </div>
+                        <div class="team-name">${prediction.team2}</div>
+                    </div>
+                </div>
+                
+                <div class="prediction-details">
+                    <div class="prediction-type">${prediction.prediction}</div>
+                    <div class="odds">
+                        <div class="odd-item">
+                            <div class="odd-label">${prediction.team1}</div>
+                            <div class="odd-value">${prediction.odds.home}</div>
+                        </div>
+                        ${hasDraw ? `
+                        <div class="odd-item">
+                            <div class="odd-label">Draw</div>
+                            <div class="odd-value">${prediction.odds.draw}</div>
+                        </div>
+                        ` : ''}
+                        <div class="odd-item">
+                            <div class="odd-label">${prediction.team2}</div>
+                            <div class="odd-value">${prediction.odds.away}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="confidence">
+                    <span>Confidence:</span>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: ${prediction.confidence}%"></div>
+                    </div>
+                    <span class="confidence-text">${prediction.confidence}%</span>
+                </div>
+                
+                <div class="prediction-actions">
+                    <button class="btn-small btn-follow" onclick="followPrediction(${prediction.id})">
+                        <i class="fas fa-heart"></i> Follow
+                    </button>
+                    <button class="btn-small btn-details" onclick="showPredictionDetails(${prediction.id})">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Follow prediction
+        function followPrediction(id) {
+            const prediction = predictionsData.find(p => p.id === id);
+            if (prediction) {
+                alert(`Following prediction: ${prediction.team1} vs ${prediction.team2} - ${prediction.prediction}`);
+            }
+        }
+
+        // Show prediction details
+        function showPredictionDetails(id) {
+            const prediction = predictionsData.find(p => p.id === id);
+            if (prediction) {
+                alert(`Prediction Analysis:\n\n${prediction.analysis}\n\nConfidence: ${prediction.confidence}%`);
+            }
+        }
+
+        // Animate statistics
+        function animateStats() {
+            const stats = [
+                { id: 'totalPredictions', end: 1247, duration: 2000 },
+                { id: 'winRate', end: 87, duration: 2000 },
+                { id: 'activeUsers', end: 15432, duration: 2000 },
+                { id: 'totalWinnings', end: 2.4, duration: 2000 }
+            ];
+
+            stats.forEach(stat => {
+                const element = document.getElementById(stat.id);
+                const start = 0;
+                const increment = stat.end / (stat.duration / 16);
+                let current = start;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= stat.end) {
+                        current = stat.end;
+                        clearInterval(timer);
+                    }
+                    
+                    if (stat.id === 'totalWinnings') {
+                        element.textContent = '$' + current.toFixed(1) + 'M';
+                    } else if (stat.id === 'winRate') {
+                        element.textContent = Math.floor(current) + '%';
+                    } else {
+                        element.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Open modal
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        }
+
+        // Close modal
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Add some interactive features
+        function addInteractiveFeatures() {
+            // Add hover effects to prediction cards
+            const cards = document.querySelectorAll('.prediction-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        }
+
+        // Initialize interactive features after DOM is loaded
+        setTimeout(addInteractiveFeatures, 1000);
+
+        // Add some dynamic content updates
+        setInterval(() => {
+            // Update match times to show countdown
+            const timeElements = document.querySelectorAll('.match-time');
+            timeElements.forEach(element => {
+                if (element.textContent.includes('Today')) {
+                    // Simulate live updates
+                    const randomMinutes = Math.floor(Math.random() * 60);
+                    element.textContent = `Today ${15 + Math.floor(Math.random() * 6)}:${randomMinutes.toString().padStart(2, '0')}`;
+                }
+            });
+        }, 30000); // Update every 30 seconds
+
+        // Add loading animation for new predictions
+        function showLoadingAnimation() {
+            const grid = document.getElementById('predictionsGrid');
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'loading';
+            loadingDiv.style.textAlign = 'center';
+            loadingDiv.style.padding = '2rem';
+            loadingDiv.innerHTML = '<div class="loading"></div><p>Loading new predictions...</p>';
+            grid.appendChild(loadingDiv);
+            
+            setTimeout(() => {
+                loadingDiv.remove();
+            }, 2000);
+        }
+
+        // Simulate new predictions every 5 minutes
+        setInterval(() => {
+            showLoadingAnimation();
+            setTimeout(() => {
+                // Add a new random prediction
+                const newPrediction = {
+                    id: Date.now(),
+                    sport: ['Football', 'Basketball', 'Tennis'][Math.floor(Math.random() * 3)],
+                    time: 'Live',
+                    team1: 'Team A',
+                    team2: 'Team B',
+                    prediction: 'Over 2.5 Goals',
+                    odds: {
+                        home: (1.5 + Math.random() * 2).toFixed(2),
+                        draw: (2.5 + Math.random() * 2).toFixed(2),
+                        away: (1.5 + Math.random() * 2).toFixed(2)
+                    },
+                    confidence: Math.floor(70 + Math.random() * 25),
+                    analysis: 'Live analysis based on current match conditions.'
+                };
+                
+                predictionsData.unshift(newPrediction);
+                loadPredictions();
+            }, 2000);
+        }, 300000); // Every 5 minutes
+    </script>
+</body>
+</html>
